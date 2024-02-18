@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="../../static/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Handlee&family=Montserrat:ital,wght@1,100&family=Roboto:ital,wght@1,300&display=swap" rel="stylesheet">
+    <title>{{ quiz.title }}</title>
+</head>
+<body>
+
+
+            <!--header content              header-content-->
+
+
+
+
+          
+              <section id="feacher">
+                <h3>{{current_time}}</h3>
+                <div class="feachers-section px-5 py-5">                    
+                  <h1 class="text-center mt-5">Available Question About {{ quiz.title }}</h1>                       
+                  <div class="container">
+                    <div class="row mt-5">
+                      <div class="col-lg-2">
+
+                      </div>
+                      <div class="col-lg-8 p-5" style="border:1px solid #ff02c0;">
+                        <form method="post"  action="{% url 'submit_quiz' quiz.id %}" >                                  
+                          {% csrf_token %}                               
+                            {% for question in questions %}
+                     
+                                  <h4> {{ question.question_text }} </h4>
+                                  <ul style="list-style-type: none;">
+                                    {% for answer in question.answer_set.all %}
+                                      <li>
+                                        <input type="radio" id="quiz" name="question_{{ question.id }}" value="{{ answer.id }}">
+                                        <label for="quiz">{{ answer.answer_text }}</label>                                                    
+                                      </li>
+                                    {% endfor %}
+                                  </ul>
+                                                     
+                            {% endfor %}                               
+                            <input class="btn btn-primary mt-2" type="submit" value="Submit Quiz">
+                          </form>
+                      </div>
+                      <div class="col-lg-2">
+
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </section>
+    
+
+
+
+
+
+
+
+        
+
+
+
+
+  
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>

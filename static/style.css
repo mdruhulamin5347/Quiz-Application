@@ -1,0 +1,74 @@
+html{
+    scroll-behavior: smooth;
+}
+h2,h3,h4,h5,h6{
+    font-family: 'Akshar', sans-serif;
+
+
+}
+header{
+    background-image: url("../media/design/bg.jpg");
+    background-repeat: no-repeat;
+    background-position:center;
+    background-size: cover;
+}
+
+.banner-container{
+    height: 100vh;
+
+}
+
+nav{
+    background-color: rgba(0,0,0,0.4);
+
+}
+.navbar-brand img{
+    width: 50px;
+    height: auto;
+    margin-left: 5px;
+}
+.nav-item{
+    padding: 1px 10px;
+}
+.nav-link{
+    color: white;
+}
+.nav-link:hover{
+    color: wheat;
+
+}
+.banner-content h1{
+    background-color: rgba(7, 101, 189, 0.8);
+    font-size: 3.5rem;
+    border-radius: 5px;
+}
+.banner-content .btn{
+    margin-right: 10px;
+
+}
+.banner-content .btn i{
+    margin-right: 8px;
+    
+}
+
+
+
+#feacher{
+    padding: 5px 10px;
+    background-color: #e8ded2;
+}
+.card{
+    border:1px solid #ff02c0;
+    margin: 15px 0px;
+    transition: 0.4s;
+  
+}
+.card-body{
+    background-color: #e8ded2;
+
+}
+.card:hover{
+    transform: scale(1.05);
+    box-shadow: 2px 6px 5px;
+
+}

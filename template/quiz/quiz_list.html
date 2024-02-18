@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+{% block title %} Quiz List {% endblock %}
+
+{% block body %}
+
+
+
+
+
+
+<section id="feacher">
+    <div class="feachers-section px-5 py-5">
+        <div class="row">
+            <h1 class="text-center">Available Quizzes</h1>
+            {% for quiz in quizzes %}
+          <div class="col-md-6 col-lg-3 my-sm-2">
+            <div class="card">
+                <img src="../../media/design/logo.png">
+                <div class="card-body">
+                    <h4 class="card-head">{{ quiz.title }}</h4>
+                    {% if user.is_authenticated %}
+                    <a class="card-link stretched-link" href="{% url 'start_quiz' quiz.id %}">Click here</a>
+                    {% else %}
+                    <a class="card-link stretched-link" href="/contact/login">Click here</a>
+                    {% endif %}
+
+
+                    
+                    
+                </div>
+            </div>
+          </div>
+          {% endfor %}
+                
+            
+         
+            
+        </div>
+    </div>
+</section>
+
+
+
+
+
+{% endblock %}
