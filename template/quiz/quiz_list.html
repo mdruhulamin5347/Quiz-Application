@@ -14,8 +14,8 @@
             <h1 class="text-center">Available Quizzes</h1>
             {% for quiz in quizzes %}
           <div class="col-md-6 col-lg-3 my-sm-2">
-            <div class="card">
-                <img src="../../media/design/logo.png">
+            <div class="card mdruhulamin">
+                <img src="/media/design/logo.png">
                 <div class="card-body">
                     <h4 class="card-head">{{ quiz.title }}</h4>
                     {% if user.is_authenticated %}

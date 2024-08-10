@@ -5,12 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <link rel="stylesheet" href="../static/style.css">
+    <link rel="stylesheet" href="/static/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Handlee&family=Montserrat:ital,wght@1,100&family=Roboto:ital,wght@1,300&display=swap" rel="stylesheet">
-    <link rel="icon" href="../media/icon/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/media/icon/favicon.ico" type="image/x-icon">
     <title>{% block title %}  {% endblock title %}</title>
+    <style>
+      .footer {
+    		background-color: #f8f9fa;
+    		padding: 20px 0;    	
+		  }
+
+		  .footer p {
+    		margin-bottom: 0;
+    		font-size: 14px;
+    		color: #333;
+		  }
+    </style>
 </head>
 <body>
 
@@ -34,9 +46,7 @@
                       <li class="nav-item">
                         <a class="nav-link" href="/quizzes/">Home</a>
                       </li>
-                      <li class="nav-item">
-                        <a class="nav-link" href="#">About Me</a>
-                      </li>
+      
                       <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                           Available Quizzes
@@ -61,8 +71,8 @@
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                           {{user.username}}
                         </a>
-                        <ul class="dropdown-menu">                
-                          <li><a class="dropdown-item" href="/profileapp/view/">Profile</a></li>
+                        <ul class="dropdown-menu">
+                          <li><a class="dropdown-item" href="/contact/Profile/">Profile</a></li>
                           <li><hr class="dropdown-divider"></li>
                           <li><a class="dropdown-item" href="/contact/logout/">Logout</a></li>
                           
@@ -111,7 +121,7 @@
         <!-- main content                main content -->
 
 
-        <main>
+        <main id="feacher">
 
           {% block body %}
 
@@ -122,27 +132,27 @@
         <!--footer content                   footer-content -->
 
 
-        <footer>
-          <footer class="mt-4">
-            <div class="bg-light pagination justify-content-center py-3">
+       
+         
+            <div id="feacher" class="pagination justify-content-center py-3">
                 <ul class="pagination">
                     <li class="page-item"><a class="page-link" href="/quizzes/">1</a></li>
                     <li class="page-item"><a class="page-link" href="/contact/contact/">2</a></li>
-                    <li class="page-item"><a class="page-link" href="">3</a></li>
-                    <li class="page-item"><a class="page-link" href="">4</a></li>
                 </ul>
             </div>
+        
+
+        <footer class="footer">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-12 text-center">
+                <p>&copy; 2024 Md Ruhul Amin. All rights reserved.</p>
+              </div>
+            </div>
+          </div>
         </footer>
                      
-            
-
-        </footer>
-   
-
-
-
-
-    
+               
 
 
 

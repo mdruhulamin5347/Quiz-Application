@@ -1,157 +1,48 @@
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <link rel="icon" href="../media/icon/favicon.ico" type="image/x-icon">
-    <title>Contact Us</title>
-</head>
-<body>
-
-    
-<main>
-    <div class="alert alert-danger alert-dismissible my-2" role="alert">
-        <button
-            class="btn-close"
-            data-bs-dismiss="alert"
-
-
-        ></button>
-        <p> hei you are like this page? <a href="https://www.youtube.com">Visit here</a>
-        </p>
-    </div>
-
-
-
-    <!--form          sections -->
-
-    
-    <div class="form-section my-5 justify-content-center align-items-center m-auto">
-        
-        <form class="border px-3 bg-light was-validated" style="width: 50%;" method="post" action="mailto:mdarafatruhulamin@gmail.com" enctype="text/plain" >
-            <div class="title text-center pt-3">
-                <h3>User Registations</h3>
-            </div>
-           
-            <div class="my-2">
-                <div class="form-input">
-                    <label for="name" class="form-label">Name:</label>
-                    <input type="text" id="name" class="form-control" required>
-                    <div class="valid-feedback">valid</div>
-                    <div class="invalid-feedback">please enter the name before summit form</div>
-
-                </div>
-                <div class="form-input">
-                    <label for="gmail" class="form-label">Gmail: </label>
-                    <input type="email" id="gamil" class="form-control" required>
-                </div>
-            </div>
-            
-            <div class="form-input my-3">
-                <div class="form-check-inline">
-                    <input type="radio" id="male" name="same" class="form-check-input">
-                    <label for="male">Male</label>
-                </div>
-                <div class="form-check-inline">
-                    <input type="radio" id="female" name="same" class="form-check-input">
-                    <label for="female">Female</label>
-                </div>
-            </div>
-            <div class="form-check mb-3">
-                <input type="checkbox" id="check" class="form-check-input">
-                <label for="check">Accept turms and conditions</label>
-
-            </div>
-
-            <div class="mb-3">
-                <label for="dipart" >Dipartment</label>
-                <select id="dipart" name="dipart" class="form-select-inline" required>
-                    
-                    <option value="cse">CSE</option>
-                    <option value="eee" selected>EEE</option>
-                    <option value="bba">BBA</option>
-                </select>
-                
-            </div>
-            
-            
-            
-            
-
-           <div class="mb-3">
-                <button class="btn btn-info">Submit</button>
-           </div>
-
-        </form>
-    </div>
-
-
-
-    
-
-
-
-   <!--Customer reviews section-->
-   <div class="customer-review bg-light pt-3 mt-5">
-        <div class="title text-center pb-1">
-            <h3>Customer reviews</h3>
-        </div>
-        <div class="row text-center">
-            <div class="col-md-4">
-                <blockquote>
-                    <i class="fas fa-3x p-2 fa-user-circle"></i>
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eveniet cumque minima distinctio nesciunt! Aliquid eius, in this web site we can learn <abbr title="Bootstrap5">Bs5</abbr></p>
-                    <footer class="blockquote-footer">
-                        Ruhul amin in <cite>Youtube</cite>
-                    </footer>
-                </blockquote>
-            </div>
-            <div class="col-md-4">
-                <blockquote>
-                    <i class="fas fa-3x p-2 fa-user-circle"></i>
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eveniet cumque minima distinctio nesciunt! Aliquid eius, in this web site we can learn <abbr title="Bootstrap5">Bs5</abbr></p>
-                    <footer class="blockquote-footer">
-                        Ruhul amin in <cite>Youtube</cite>
-                    </footer>
-                </blockquote>
-            </div>
-            <div class="col-md-4">
-                <blockquote>
-                    <i class="fas fa-3x p-2 fa-user-circle"></i>
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eveniet cumque minima distinctio nesciunt! Aliquid eius, in this web site we can learn <abbr title="Bootstrap5">Bs5</abbr></p>
-                    <footer class="blockquote-footer">
-                        Ruhul amin in <cite>Youtube</cite>
-                    </footer>
-                </blockquote>
-            </div>
-        </div>
-
-        
-   </div>
-</main>
-
-        <!--footer content                   footer-content -->
-
-
-        <footer>
-            <footer class="mt-4">
-              <div class="bg-light pagination justify-content-center py-3">
-                  <ul class="pagination">
-                      <li class="page-item"><a class="page-link" href="/quizzes/">1</a></li>
-                      <li class="page-item"><a class="page-link" href="/contact/contact/">2</a></li>
-                      <li class="page-item"><a class="page-link" href="">3</a></li>
-                      <li class="page-item"><a class="page-link" href="">4</a></li>
-                  </ul>
-              </div>
-          </footer>
-                       
-              
   
-          </footer>
-     
+    {% extends 'base.html' %}
+
+    {% block title %} Contact Page  {% endblock %}
     
-</body>
-</html>
+    {% block head %}
+
+
+    
+    
+    {% endblock head %}
+    
+    {% block body %}
+    
+    
+    <div class="header"><h4 style="text-align: center; margin-top:60px; font-size:40px; color:#0B5ED7;font-weight: bold;">Contact Me</h4></div>
+            <div class="container mt-5">
+              <div class="row justify-content-center">
+                <div class="col-lg-8 col-md-6">
+                  <div class="card shadow-lg">
+                    <div class="card-body">
+                      <h5 class="card-title text-center">Contact</h5>
+                      
+                        <form method="POST" action="">
+                            {% csrf_token %}
+                            {% load crispy_forms_tags %}
+                            {{form | crispy }}
+                        
+                          <div class="d-grid">
+                            <button type="submit" class="btn btn-primary">Submit</button>
+                          </div>
+                        </form>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          
+    </div>
+    
+    
+
+
+    
+
+
+{% endblock body %}
 

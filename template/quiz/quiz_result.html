@@ -1,15 +1,206 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/media/icon/favicon.ico" type="image/x-icon">
     <title>Quiz Result</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            overflow: hidden;
+            position: relative;
+            width: 100%;
+            height: 100vh;
+        }
+        
+        body::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('/media/design/selebraty.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            opacity: 0.3;
+            z-index: -1;
+        }        
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+            padding: 50px 20px;
+        }
+
+        h1 {
+            color: #000;
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 18px;
+            font-weight: bold;
+            color: #000000;
+        }
+
+        /* Styles for square confetti */
+        .confetti {
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            background-color: #f00;
+            clip-path: polygon(
+                50% 0%, /* Top point */
+                61% 35%, /* Top-right point */
+                98% 35%, /* Right point */
+                68% 57%, /* Bottom-right point */
+                79% 91%, /* Bottom point */
+                50% 70%, /* Bottom inner point */
+                21% 91%, /* Bottom-left point */
+                32% 57%, /* Left-bottom point */
+                2% 35%, /* Left point */
+                39% 35%  /* Top-left point */
+            );
+            animation: confetti-fall 7s ease-in-out infinite;
+        }
+
+        /* Keyframes for square confetti */
+        @keyframes confetti-fall {
+            0% { transform: translateY(-100vh) rotate(0deg); }
+            100% { transform: translateY(100vh) rotate(360deg); }
+        }
+
+        /* Assigning different colors and delays to square confetti */
+        .confetti:nth-child(2) { left: 10%; animation-delay: 1s; background-color: #00f; }
+        .confetti:nth-child(3) { left: 20%; animation-delay: 2s; background-color: #0f0; }
+        .confetti:nth-child(4) { left: 30%; animation-delay: 3s; background-color: #ff0; }
+        .confetti:nth-child(5) { left: 40%; animation-delay: 4s; background-color: #f0f; }
+        .confetti:nth-child(6) { left: 50%; animation-delay: 5s; background-color: #0ff; }
+        .confetti:nth-child(7) { left: 60%; animation-delay: 6s; background-color: #f80; }
+        .confetti:nth-child(8) { left: 70%; animation-delay: 7s; background-color: #8f0; }
+        .confetti:nth-child(9) { left: 80%; animation-delay: 8s; background-color: #f08; }
+        .confetti:nth-child(10) { left: 90%; animation-delay: 9s; background-color: #0f8; }
+
+        /* Styles for round confetti */
+        .confettii {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background-color: #f00;
+            animation: confettii-fall 5s ease-in-out infinite;
+        }
+
+        /* Keyframes for round confetti */
+        @keyframes confettii-fall {
+            0% { transform: translateY(-100vh) rotate(0deg); }
+            100% { transform: translateY(100vh) rotate(360deg); }
+        }
+
+        /* Assigning different colors and delays to round confetti */
+        .confettii:nth-child(11) { left: 5%; animation-delay: 0.5s; background-color: #00f; }
+        .confettii:nth-child(12) { left: 15%; animation-delay: 1.5s; background-color: #0f0; }
+        .confettii:nth-child(13) { left: 25%; animation-delay: 2.5s; background-color: #ff0; }
+        .confettii:nth-child(14) { left: 35%; animation-delay: 3.5s; background-color: #f0f; }
+        .confettii:nth-child(15) { left: 45%; animation-delay: 4.5s; background-color: #0ff; }
+        .confettii:nth-child(16) { left: 55%; animation-delay: 5.5s; background-color: #f80; }
+        .confettii:nth-child(17) { left: 65%; animation-delay: 6.5s; background-color: #8f0; }
+        .confettii:nth-child(18) { left: 75%; animation-delay: 7.5s; background-color: #f08; }
+        .confettii:nth-child(19) { left: 85%; animation-delay: 8.5s; background-color: #0f8; }
+
+        .balloon {
+            position: absolute;
+            width: 80px;
+            height: 100px;
+            background-color: #ff6384;
+            border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+            animation: balloon-rise 10s linear infinite;
+            transform-origin: bottom center;
+        }
+
+        @keyframes balloon-rise {
+            0% { transform: translateY(0) scale(1); }
+            50% { transform: translateY(-1000px) scale(1.1); }
+            100% { transform: translateY(-2000px) scale(1); }
+        }
+
+
+
+        .sparkles {
+            position: absolute;
+            width: 15px;
+            height: 15px;
+            background-color: #ffcc00;
+            border-radius: 50%;
+            animation: sparkles-fall 3s ease-in-out infinite;
+        }
+
+        @keyframes sparkles-fall {
+            0%, 100% { transform: translateY(-100vh) rotate(0deg); }
+            50% { transform: translateY(100vh) rotate(360deg); }
+        }
+
+        .try-again {
+            margin-top: 50px;
+            text-align: center;
+        }
+
+        .try-again a {
+            color: rgb(250, 248, 245);
+            font-size: 24px;
+        }
+
+        .try-again a:hover {
+            color: black;
+        }
+
+    </style>
 </head>
 <body>
-    <h1>Quiz Result for {{ quiz.title }}</h1>
-    
-    <p>Your score:  <b>{{ score }}</b> out of <b>{{ questions.count }}</b></p>
-    <p>Your percentage_score:  <b>{{ percentage_score }} %</b> </p>
+    <div class="container">
+        <h1>Congratulations!</h1>
+        <h2>Quiz Result for {{ quiz.title }}</h2>
+        <p>Your score: <b>{{ score }}</b> out of <b>{{ questions.count }}</b></p>
+        <p>Your percentage score: <b>{{ percentage_score }} %</b></p>
 
+        <!-- Confetti Elements -->
+        <div class="confetti"></div>
+        <div class="confetti"></div>
+        <div class="confetti"></div>
+        <div class="confetti"></div>
+        <div class="confetti"></div>
+        <div class="confetti"></div>
+        <div class="confetti"></div>
+        <div class="confetti"></div>
+        <div class="confetti"></div>
+        <div class="confetti"></div>
 
+        <!-- Round Confetti Elements -->
+        <div class="confettii"></div>
+        <div class="confettii"></div>
+        <div class="confettii"></div>
+        <div class="confettii"></div>
+        <div class="confettii"></div>
+        <div class="confettii"></div>
+        <div class="confettii"></div>
+        <div class="confettii"></div>
+        <div class="confettii"></div>
+        <div class="confettii"></div>
 
+        <!-- Balloons and Sparkles -->
+        <div class="balloon"></div>
+        <div class="sparkles"></div>
+
+        <!-- Try Again Link -->
+        <div class="try-again">
+            <a href="{% url 'quiz_list' %}">Go Back Home</a>
+        </div>
+    </div>
 </body>
 </html>
